@@ -29,4 +29,8 @@ addnew(){
   let newuser = {id:5,name:'nagavalli',gmail:'nagavalli@gmail.com'}
   this.userObj.push(newuser)
 }
+ondelete(user:any){
+  this.userObj.pop()
+}
+
 }

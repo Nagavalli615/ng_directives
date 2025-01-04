@@ -1,9 +1,9 @@
-                                                  <!-- DIRECTIVES -->
+                                                  DIRECTIVES
                                   <!-- STRUCTURAL DIRECTIVE -->
 <!-- OLD VERSION OF STRUCTURAL DIRECTIVE USEING * -->
 <h2 *ngIf="isenable; else message">{{user}}</h2>
 
-<!-- <h1 *ngIf="!isenable">user not found</h1> -->
+<h1 *ngIf="!isenable">user not found</h1>
 
 <!-- ANOTHER WAY TO USE ELSE WITH NG-TEMPLATE  -->
  <ng-template #message>
@@ -42,7 +42,7 @@
 </ng-template>
 
 <!-- NGTEMPLATEOUTLET -->
-<!-- <ng-template #displaycontent>
+<ng-template #displaycontent>
   <button>click</button>
   <p>its working</p>
 </ng-template>
@@ -51,13 +51,13 @@
 
 <h1 [ngTemplateOutlet]="displaycontent">heroien</h1>
 
-<h1 [ngTemplateOutlet]="displaycontent">villain</h1> -->
+<h1 [ngTemplateOutlet]="displaycontent">villain</h1> 
 
 <!-- NGFOR -->
-<!-- <h1>{{users}}</h1> -->
-<!-- <h2>{{users [0]}}</h2>
+<h1>{{users}}</h1>
+ <h2>{{users [0]}}</h2>
 <h2>{{users [1]}}</h2>
-<h2>{{users [2]}}</h2> -->
+<h2>{{users [2]}}</h2>
 
 <h1 *ngFor="let i of users">{{i}}</h1>
 
@@ -78,3 +78,4 @@
 
 <button (click)="addnew()">click to add new user</button>
 
+<h1 *ngFor="let user of userObj">{{user.name}} <button (click)="ondelete(user)">delete</button></h1>
