@@ -78,4 +78,64 @@
 
 <button (click)="addnew()">click to add new user</button>
 
-<h1 *ngFor="let user of userObj">{{user.name}} <button (click)="ondelete(user)">delete</button></h1>
+<!-- <h5 *ngFor="let user of userObj; let i = index">{{i}} {{user.name}} <button (click)="ondelete(user)">delete</button></h5> -->
+<h5 *ngFor="let user of userObj; let i = index; let usercount=count">{{usercount}} {{user.name}} <button (click)="ondelete(i)">delete</button></h5>
+
+<!-- NEW APROACH -->
+<ol>
+@for(user of userObj;track user;let  i = $index;let usercount = $count){
+ <li>
+    <!--  DELETE WITH INDEX VALUES -->
+   <!-- {{userObj.length}} {{user.name}} <button (click)="ondelete(i)">delete</button> <br><br> -->
+    <!-- {{user.name}} <button (click)="ondelete(user)">delete</button> -->
+    {{usercount}} {{user.name}} <button (click)="ondelete(i)">delete</button>
+  </li>
+  
+}
+@empty{
+  <p>this is render from empty syntax block</p>
+}
+</ol>
+
+@if(userObj.length > 0){
+  <h1 style="color: green;">users are existed in this array</h1>
+}
+@else{
+  <h1 style="color: red;">there is no users in this array</h1>
+}
+
+<ol>
+@for(u of userObj;track u ; let first = $first; let last = $last; let even = $even;let odd = $odd){
+  <li>
+  <!-- <h4>{{first}}--{{u.id}}</h4>
+  <h4>{{last}}--{{u.gmail}}</h4>
+  <h4>{{even}}----{{u.id}}</h4> -->
+  <h4>{{odd}}----{{u.id}}</h4>
+  
+</li>
+}
+</ol>
+
+
+<!-- NG SWITCH CASE  -->
+<!-- <div [ngSwitch]="userrole">
+  <p *ngSwitchCase="'admin'">welcome admin</p>
+  <p  *ngSwitchCase="'user'">welcome user</p>
+  <!-- IT SHOWS BY DEFAULT IF THERE IS NO VALUE BUT THIS IS NOT GOOD PRACTICE -->
+  <!-- <p  *ngSwitchCase="''">welcome user</p> -->
+  <!-- BY DEFAULT RENDER IF THERE IS NO VALUE USE NGSWITCHDEFAULT  -->
+  <!-- <P *ngswitchDeafult>value render by default</P> -->
+<!-- </div> -->
+<!-- new way ng switch CASE -->
+ @switch(userrole){
+  @case('admin'){
+    <p>welcome admin</p>
+  }
+  @case('user'){
+    <p>welcome user</p>
+  }
+  @default{
+    <p>default value</p>
+  }
+  
+ }
