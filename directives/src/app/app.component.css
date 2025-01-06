@@ -1,0 +1,10 @@
+.classBinding{
+    color: yellow;
+    text-transform: capitalize;
+    font-weight: 600;
+    text-decoration: underline;
+}
+.bindingfalse{
+    color: aqua;
+    font-weight: 10000;
+}

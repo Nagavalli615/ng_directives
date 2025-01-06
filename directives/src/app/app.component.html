@@ -139,3 +139,15 @@
   }
   
  }
+
+
+                                          <!-- ATTRIBUTE BINDING-->
+<!-- STYLE BINDING -->
+ <!-- OLDWAY  -->
+<h1 [style.color]="isstyle?'green':'red'" [style.textTransform]="isstyle?'uppercase':'lowerCase'">from attribute binding-- style binding</h1>
+<!-- NEW WAY -->
+<h1 [ngStyle]="{'color': isstyle?'pink':'black' , textTransform :isstyle? 'lowercase':'uppercase'  }">from css</h1>
+ <!--ngClass OLDWAY  -->
+<h1 [class.classBinding]="isstyle" [class.bindingfalse]="!isstyle"> from class binding</h1>
+<!-- ngClass NEW WAY-->
+<h1 [ngClass]="isstyle?'classBinding':'bindingfalse'">this is from ng style</h1>
